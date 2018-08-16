@@ -7,6 +7,7 @@ a corresponding region consisting of all points closer to that seed than to any 
 These regions are called Voronoi cells.
 
 More detailed info about Voronoi diagram and it's usage can be here: https://en.wikipedia.org/wiki/Voronoi_diagram
+
 ----------------------------------------------------------------------------------------------------------------------------
 Fortune's algorithm is an optimal algorithm for generating Voronoi diagram from a set of points. Detailed info:
 https://en.wikipedia.org/wiki/Fortune%27s_algorithm
