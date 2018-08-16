@@ -1,4 +1,4 @@
-# Voronoi_Diagram
+# Voronoi Diagram
 An app, implementing  Fortune's  sweep line algorithm for building the Voronoi diagram
 
 A Voronoi diagram is a partitioning of a plane into regions based on distance to points in a specific subset of the plane. 
