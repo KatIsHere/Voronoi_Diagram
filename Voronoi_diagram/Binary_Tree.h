@@ -129,6 +129,9 @@ public:
 		}
 		return (*it).get();
 	};
+	bool isEmpty() {
+		return (root == nullptr);
+	}
 private:
 	class iterator {
 	public:
