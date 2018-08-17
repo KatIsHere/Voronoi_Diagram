@@ -1,27 +1,29 @@
-#include "Voronnoi_Diagram.h"
+#include "Voronoi_Diagram.h"
 using namespace std;
-Voronoi_diagram::Voronoi_diagram(){}
+class Event;
 
+Voronoi_diagram::Voronoi_diagram() {};
 
 Voronoi_diagram::Voronoi_diagram(std::vector<Point> P)
 {
 	setNewPoints(P);
 }
 
-
 void Voronoi_diagram::setNewPoints(std::vector<Point> P)
 {
 	edges.clear();
 	// initialize T
 	for (int i = 0; i < P.size(); ++i) {
-		events.push_back(Event(Place_Event(P[i])));
+		events.push(Event(P[i]));
 	}
 }
 
-
-void Voronoi_diagram::HandlePlaceEvent(Place_Event p)
+void Voronoi_diagram::HandlePlaceEvent(Event p)
 {
 	if (beachLine.isEmpty()) {
+		beachLine.insert(Arc(p.getPlace()));
+	}
+	else {
 
 	}
 }
@@ -34,10 +36,10 @@ void Voronoi_diagram::ConstructDiagram()
 		currentEvent = events.top();
 		events.pop();
 		if (currentEvent.isPlace_Event()) {
-			HandlePlaceEvent(currentEvent.getPlaceEvent());
+			HandlePlaceEvent(currentEvent);
 		}
 		else {
-			HandleCircleEvent(currentEvent.getCircleEvent());
+			HandleCircleEvent(currentEvent);
 		}
 	}
 }

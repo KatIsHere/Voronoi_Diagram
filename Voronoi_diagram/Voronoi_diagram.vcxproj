@@ -116,10 +116,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Binary_Tree.h" />
-    <ClInclude Include="Voronnoi_Diagram.h" />
+    <ClInclude Include="Voronoi_Diagram.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Voronnoi_Diagram.cpp" />
+    <ClCompile Include="Voronoi_Diagram.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,7 +1,6 @@
 #pragma once
-#pragma once
 #include <iterator>
-#include<iostream>
+#include <iostream>
 #include <vector>
 #include <fstream>
 
@@ -16,16 +15,20 @@ public:
 	~Binary_Tree() {
 		clear();
 	};
+
+	// Read values from a container to a tree
 	void read(const container& values) {
 		for (auto i = values.begin(); i != values.end(); ++i) {
 			insert(*i);
 		}
 	};
+	
+	// Clear all data from the tree
 	void clear() {
 		clear_tree(root);
 		length = 0;
 	};
-	iterator* find(T element) {
+	const iterator* find(T element) {
 		if (root != nullptr) {
 			if (element < (*(root)).get()) {
 				search(element, root->left_element);
@@ -37,6 +40,13 @@ public:
 		else
 			return nullptr;
 	};
+	
+	// Checks if element is a part of the tree
+	bool isElement(const T& element) {
+		return find(element) != nullptr;
+	}
+
+	// Insert new element into the tree
 	void insert(const T& element) {
 		if (root != nullptr) {
 			insert(element, root);
@@ -78,21 +88,30 @@ public:
 	int size() {
 		return length;
 	};
-	iterator* successor_min(iterator* node) {
+	
+	// Next left element
+	const iterator* successor_min(iterator* node) {
 		return node->left_element;
 	};
-	iterator* successor_max(iterator* node) {
+	
+	// Next right element
+	const iterator* successor_max(iterator* node) {
 		return node->right_element;
 	};
-	iterator* previous(iterator* node) {
+	
+	const iterator* previous(iterator* node) {
 		return node->parent;
 	};
-	iterator* end() {
+	const iterator* end() {
 		return nullptr;
 	};
-	iterator* begin() {
+	const iterator* begin() {
 		return root;
 	};
+	
+	/*
+	* Output tree into a console
+	*/
 	void Write() {
 		if (root != nullptr) {
 			std::cout << "{\t" << (*(root)).get() << ": \n\t\t{";
@@ -107,6 +126,8 @@ public:
 	T& operator[](iterator it) {
 		return it.get();
 	}
+	
+	// Maximal element of the tree(far end)
 	T& max() {
 		iterator* it = nullptr;
 		if (root != nullptr) {
@@ -118,6 +139,8 @@ public:
 		}
 		return (*it).get();
 	};
+
+	// Minimal element of the tree(begining)
 	T& min() {
 		iterator* it = nullptr;
 		if (root != nullptr) {
