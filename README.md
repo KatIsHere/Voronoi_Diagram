@@ -11,3 +11,5 @@ More detailed info about Voronoi diagram and it's usage can be here: https://en.
 ----------------------------------------------------------------------------------------------------------------------------
 Fortune's algorithm is an optimal algorithm for generating Voronoi diagram from a set of points. Detailed info:
 https://en.wikipedia.org/wiki/Fortune%27s_algorithm
+
+Realy good explanation of the concept can also be found here: https://www.ams.org/publicoutreach/feature-column/fcarc-voronoi
